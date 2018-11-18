@@ -37,7 +37,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ebf-MX-vns">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ebf-MX-vns" customClass="VerlaufView" customModule="ChatChannel" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="70"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mnd-XH-TQt">
@@ -63,6 +63,14 @@
                                     <constraint firstItem="Mnd-XH-TQt" firstAttribute="leading" secondItem="Ebf-MX-vns" secondAttribute="leading" constant="13" id="jEH-u5-aDI"/>
                                     <constraint firstAttribute="height" constant="70" id="uYc-uX-605"/>
                                 </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="topColor">
+                                        <color key="value" red="0.0" green="0.36887257080000002" blue="0.7348632812" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="bottomColor">
+                                        <color key="value" red="0.4604492188" green="0.73128256810000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -85,19 +93,81 @@
         <scene sceneID="SHf-wG-SrQ">
             <objects>
                 <viewController id="Wez-Fp-EZh" customClass="ChannelVC" customModule="ChatChannel" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="Wzb-0V-xVK">
+                    <view key="view" contentMode="scaleToFill" id="Wzb-0V-xVK" customClass="VerlaufView" customModule="ChatChannel" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Chat AP MH" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JKC-qy-kSB">
+                                <rect key="frame" x="20" y="35" width="112.5" height="25.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="channels" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kpQ-dU-3BQ">
+                                <rect key="frame" x="20" y="80.5" width="69" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profileDefault" translatesAutoresizingMaskIntoConstraints="NO" id="pgU-Qf-k8S">
+                                <rect key="frame" x="20" y="567" width="80" height="80"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="80" id="V7e-A0-Wdh"/>
+                                    <constraint firstAttribute="height" constant="80" id="suX-d5-JzH"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oPx-yX-hqz">
+                                <rect key="frame" x="120" y="589" width="49" height="36"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="Login">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EgW-CX-ZL1">
+                                <rect key="frame" x="273" y="80" width="22" height="22"/>
+                                <state key="normal" image="addChannelButton"/>
+                            </button>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="aAV-p9-qVh">
+                                <rect key="frame" x="0.0" y="122" width="375" height="425"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="pgU-Qf-k8S" firstAttribute="top" secondItem="aAV-p9-qVh" secondAttribute="bottom" constant="20" id="4En-rR-IOY"/>
+                            <constraint firstItem="JKC-qy-kSB" firstAttribute="top" secondItem="QBi-VV-J6i" secondAttribute="top" constant="15" id="5D3-jz-HAW"/>
+                            <constraint firstItem="kpQ-dU-3BQ" firstAttribute="top" secondItem="JKC-qy-kSB" secondAttribute="bottom" constant="20" id="5QV-HL-4Lo"/>
+                            <constraint firstItem="oPx-yX-hqz" firstAttribute="centerY" secondItem="pgU-Qf-k8S" secondAttribute="centerY" id="5VM-Ux-u42"/>
+                            <constraint firstItem="pgU-Qf-k8S" firstAttribute="leading" secondItem="QBi-VV-J6i" secondAttribute="leading" constant="20" id="N3r-Cc-QoI"/>
+                            <constraint firstItem="JKC-qy-kSB" firstAttribute="leading" secondItem="QBi-VV-J6i" secondAttribute="leading" constant="20" id="SLk-oF-q6D"/>
+                            <constraint firstItem="aAV-p9-qVh" firstAttribute="leading" secondItem="QBi-VV-J6i" secondAttribute="leading" id="T9n-DT-xv6"/>
+                            <constraint firstItem="QBi-VV-J6i" firstAttribute="bottom" secondItem="pgU-Qf-k8S" secondAttribute="bottom" constant="20" id="TtQ-TC-DBl"/>
+                            <constraint firstItem="oPx-yX-hqz" firstAttribute="leading" secondItem="pgU-Qf-k8S" secondAttribute="trailing" constant="20" id="U1T-Ci-yfe"/>
+                            <constraint firstItem="aAV-p9-qVh" firstAttribute="top" secondItem="EgW-CX-ZL1" secondAttribute="bottom" constant="20" id="aGr-E3-0zT"/>
+                            <constraint firstItem="EgW-CX-ZL1" firstAttribute="centerY" secondItem="kpQ-dU-3BQ" secondAttribute="centerY" id="eVZ-3S-fCj"/>
+                            <constraint firstItem="aAV-p9-qVh" firstAttribute="trailing" secondItem="QBi-VV-J6i" secondAttribute="trailing" id="jr8-tC-t5X"/>
+                            <constraint firstItem="kpQ-dU-3BQ" firstAttribute="leading" secondItem="QBi-VV-J6i" secondAttribute="leading" constant="20" id="nKB-Wu-Vf3"/>
+                            <constraint firstItem="QBi-VV-J6i" firstAttribute="trailing" secondItem="EgW-CX-ZL1" secondAttribute="trailing" constant="80" id="xxX-MS-Ze8"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="QBi-VV-J6i"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="color" keyPath="topColor">
+                                <color key="value" red="0.0" green="0.36887257083496111" blue="0.73486328125" alpha="1" colorSpace="calibratedRGB"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="color" keyPath="bottomColor">
+                                <color key="value" red="0.46044921875" green="0.73128256810058612" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="75v-Lb-oOu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1082" y="-191"/>
+            <point key="canvasLocation" x="1080.8" y="-191.1544227886057"/>
         </scene>
     </scenes>
     <resources>
+        <image name="addChannelButton" width="22" height="22"/>
+        <image name="profileDefault" width="192" height="192"/>
         <image name="smackBurger" width="40" height="40"/>
     </resources>
 </document>

@@ -331,16 +331,17 @@
                                 <state key="normal" image="closeButton"/>
                                 <connections>
                                     <action selector="closeBtnPressed:" destination="ocY-8f-LQr" eventType="touchUpInside" id="9Kg-np-jbS"/>
+                                    <action selector="closePressed:" destination="0po-Vk-n3H" eventType="touchUpInside" id="zaA-uT-COP"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Create Account" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6uq-4u-wOr">
-                                <rect key="frame" x="86" y="80" width="204" height="34"/>
+                                <rect key="frame" x="86" y="80" width="204" height="33.5"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="28"/>
                                 <color key="textColor" red="0.31306302549999998" green="0.49617570640000003" blue="0.76597207779999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="DPA-JT-KbX">
-                                <rect key="frame" x="62" y="163" width="250" height="121"/>
+                                <rect key="frame" x="62" y="162.5" width="250" height="121"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="email" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7BI-7D-IaA">
                                         <rect key="frame" x="0.0" y="0.0" width="250" height="30"/>
@@ -410,12 +411,15 @@
                                     <constraint firstAttribute="width" constant="250" id="Gok-KM-EAb"/>
                                     <constraint firstAttribute="height" constant="50" id="NKG-sh-t52"/>
                                 </constraints>
-                                <state key="normal" title="Create">
+                                <state key="normal" title="Create Account">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PxG-g4-QWc">
-                                <rect key="frame" x="146.5" y="454" width="81" height="27"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="bottom" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PxG-g4-QWc">
+                                <rect key="frame" x="132" y="324" width="110" height="141"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="141" id="TEG-IL-ai7"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <state key="normal" title="choose Avatar">
                                     <color key="titleColor" red="0.31306302549999998" green="0.49617570640000003" blue="0.76597207779999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -425,7 +429,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0eD-cW-wgk">
-                                <rect key="frame" x="126" y="501" width="122" height="27"/>
+                                <rect key="frame" x="126" y="485" width="122" height="27"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <state key="normal" title="generate Background">
                                     <color key="titleColor" red="0.31306302549999998" green="0.49617570640000003" blue="0.76597207779999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -435,7 +439,7 @@
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profileDefault" translatesAutoresizingMaskIntoConstraints="NO" id="fGx-qX-woR">
-                                <rect key="frame" x="132.5" y="324" width="110" height="110"/>
+                                <rect key="frame" x="132.5" y="323.5" width="110" height="110"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="110" id="0KE-Ir-dYl"/>
                                     <constraint firstAttribute="height" constant="110" id="Bi6-3M-WJu"/>
@@ -449,20 +453,25 @@
                             <constraint firstItem="DPA-JT-KbX" firstAttribute="centerX" secondItem="3JE-iQ-o2Q" secondAttribute="centerX" id="7l5-5U-dKa"/>
                             <constraint firstItem="6uq-4u-wOr" firstAttribute="centerX" secondItem="3JE-iQ-o2Q" secondAttribute="centerX" id="HcU-O7-KkJ"/>
                             <constraint firstItem="fBO-YG-dpD" firstAttribute="centerX" secondItem="3JE-iQ-o2Q" secondAttribute="centerX" id="Pfp-dK-Cox"/>
+                            <constraint firstItem="PxG-g4-QWc" firstAttribute="top" secondItem="fGx-qX-woR" secondAttribute="top" id="Tq8-LX-zZ0"/>
                             <constraint firstItem="h89-H4-tI1" firstAttribute="top" secondItem="e7a-9M-ObY" secondAttribute="top" constant="16" id="bQG-Bx-H9F"/>
                             <constraint firstItem="DPA-JT-KbX" firstAttribute="top" secondItem="6uq-4u-wOr" secondAttribute="bottom" constant="49.5" id="bYE-A5-CLU"/>
-                            <constraint firstItem="PxG-g4-QWc" firstAttribute="top" secondItem="fGx-qX-woR" secondAttribute="bottom" constant="20" id="bwn-oV-emV"/>
                             <constraint firstItem="0eD-cW-wgk" firstAttribute="top" secondItem="PxG-g4-QWc" secondAttribute="bottom" constant="20" id="eCh-Fa-Q8k"/>
                             <constraint firstItem="0eD-cW-wgk" firstAttribute="centerX" secondItem="3JE-iQ-o2Q" secondAttribute="centerX" id="hYu-HR-soS"/>
                             <constraint firstItem="fGx-qX-woR" firstAttribute="top" secondItem="DPA-JT-KbX" secondAttribute="bottom" constant="40" id="ks1-e7-b7O"/>
                             <constraint firstItem="6uq-4u-wOr" firstAttribute="top" secondItem="e7a-9M-ObY" secondAttribute="top" constant="60" id="pXC-e2-8Fd"/>
                             <constraint firstItem="e7a-9M-ObY" firstAttribute="trailing" secondItem="h89-H4-tI1" secondAttribute="trailing" constant="16" id="qES-jb-LFs"/>
                             <constraint firstItem="PxG-g4-QWc" firstAttribute="centerX" secondItem="3JE-iQ-o2Q" secondAttribute="centerX" id="sez-WV-gtL"/>
+                            <constraint firstItem="PxG-g4-QWc" firstAttribute="width" secondItem="fGx-qX-woR" secondAttribute="width" id="zo6-MY-4Ws"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="e7a-9M-ObY"/>
                     </view>
+                    <connections>
+                        <segue destination="be9-CX-ZWc" kind="unwind" identifier="unwindToChannel" unwindAction="prepareForUnwindWithSegue:" id="6bP-f1-27G"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="T26-Na-kM8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="be9-CX-ZWc" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="2701.5999999999999" y="-190.25487256371815"/>
         </scene>
